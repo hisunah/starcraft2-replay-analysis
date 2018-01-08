@@ -1,6 +1,6 @@
 문제  해결
 ===============
-*다른 언어로 보기: [English](troubleshooting.md)*
+*다른 언어로 보기: [English](DEBUGGING.md)*
 
 Jupyter Notebooks (주피터 노트북)
 -----------------
