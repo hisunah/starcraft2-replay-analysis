@@ -1,5 +1,6 @@
 Troubleshooting
 ===============
+*Read this in other languages: [한국어](troubleshooting-ko.md)*
 
 Jupyter Notebooks
 -----------------
