@@ -1,11 +1,12 @@
-Troubleshooting
+문제  해결
 ===============
+*Read this in other languages: [English](troubleshooting.md)*
 
-Jupyter Notebooks
+Jupyter Notebooks (주피터 노트북)
 -----------------
 
-* Make sure the pip install ran correctly. You might need to restart the
-  kernel and run the cells from the top after the pip install runs the first
-  time.
-* Many of the cells rely on variables that are set in earlier cells. Some of
-  these are cleared in later cells. Start over at the top when troubleshooting.
+* pip로 설치가 올바르게 되었는지 확인합니다. 
+pip 설치가 완료된 이후에는 커널을 다시 시작하여 
+가장 위의 셀부터 실행합니다. 
+* 대부분의 셀은 이전 셀에서 설정된 변수에 의존합니다. 일부
+ 변수는 나중의 셀에서 삭제됩니다. 문제 해결을 할 때는 맨 위부터 다시 시작하십시오.
