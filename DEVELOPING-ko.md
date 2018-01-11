@@ -47,32 +47,27 @@ Python이 이러한 관례를 강제하는 것은 아니지만, Python개발자�
 
 결과값 다듬기 
 ------------------
-노트북의 가장 큰 장점 중 하나는 귀하가 현재 하는 일을 문서화하고, 작업물과 결과를 보여주고, 
+노트북의 가장 큰 장점 중 하나는 귀하가 현재 하는 일을 문서화하고, 작업과 결과를 보여주고, 
 결과를 문서화하는 작업을 한 곳에서 할 수 있다는 점입니다. 
-"나의 작업물"(코드)을 공유하는 건 멋진 일입니다. "only text and output" 기능을 활용해
+"나의 작업"(코드)을 공유하는 건 멋진 일입니다. "only text and output" 기능을 활용해
 웹페이지를 깨끗하고 멋지게 만드십시오. 아래 팁을 활용하십시오. 
 
 #### @hidden_cell 기능
 
 마법같은 @hidden_cell 기능으로 신임 정보 셀을 "민감 정보"로 표시하십시오.
- If you do any rearranging of sensitive code, remember to identify sensitive
-cells with @hidden_cell.
+민감 정보를 재정렬할 때는, 민감 정보가 담길 셀을 @hidden_cell로 꼭 표시해야 합니다. 
 
-#### Ending with a semi-colon 
+#### 세미콜론으로 마치기 
 
-Statements in a notebook can end with a semi-colon. It looks like
-bad Python, but it is actually a trick to prevent these statements from
-showing their result in the output.
+노트북의 명령문은 세미콜론으로 끝냅니다. 
+잘못 짠 Python처럼 보이지만, 실제로는 출력 화면에 결과값을 보이지 않게 하는 방법입니다.
    
 #### if DEBUG
 
-A DEBUG boolean and 'if' statements can be used throughout the notebook
-wherever some print statements are handy during development and might be
-handy in the future, but are not something you want to share in the final
-output.
+프린트 구문(print statement)을 간편하게 사용면서 최종 결과값에서는 
+제외하고자 할 때는 DEBUG 부울 및 'if'문을 노트북에서 사용합니다. 
 
 #### %%capture captured_io
  
-"%%capture captured_io" magic can be used to capture the output when nothing
-else works. You can use that to hide the "!pip install" output and add a cell
-right after it that will print the captured output if DEBUG is True.
+"%%capture captured_io"는 "!pip install"의 결과값을 캡처하기 위해 사용합니다. 
+"!pip install" 결과값을 나타내지 않고, if DEBUG 값이 True일 경우에만 셀을 추가하여 캡처된 결과값을 프린트할 때 사용합니다. 
