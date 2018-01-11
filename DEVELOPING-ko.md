@@ -1,63 +1,61 @@
-Tips for Developers
+개발자를 위한 팁
 ===================
+*다른 언어로 보기: [English](DEVELOPING.md)*
 
-The notebook is designed to be run top-down. Settings in early cells are used
-in later cells. Some variables are also cleared to free up memory. So, although
-you can often run single cell repeatedly while testing changes, you may want
-to start over from the top if anything seems to be missing.
+주피터 노트북은 top-down 방식으로 실행되도록 설계되었습니다. 이전 셀의 세팅이 이후 셀에서도 사용됩니다. 
+일부 변수는 메모리 확보를 위해 삭제됩니다. 따라서, 변경 사항을 테스트 중 간간히 단일 셀을 반복적으로
+실행할 수도 있습니다. 무엇인가 빠진 것 같다면, 가장 위에서부터 다시 셀을 실행하십시오.
 
-Setting credentials
+신임 정보 설정하기 
 -------------------
-Credentials need to be added to the notebook to access some Bluemix services.
-The credentials are set near the top of the notebook to make it
-more obvious that they need to be set and also to make it more obvious that
-you will be saving a notebook with credentials. You should not share your
-notebook with anyone that you would not share your credentials with
-unless you use the ``share`` feature with the ``Only text and output`` or
-``All content excluding sensitive code cells`` option.
+일부 IBM Cloud 서비스를 사용하려면 신임 정보 설정이 필요합니다. 
+신임 정보는 노트북의 가장 상단 부분에서 설정이 되는데, 이는 신임 정보가 설정되어야 함을 분명히 알리고
+또 귀하가 이 노트북에 신임 정보를 설정했슴을 분명히 하기 위해서입니다.  따라서 귀하의 신임 정보를
+공유하지 않을 사람과 귀하의 노트북을 공유해서는 안됩니다. 공유하는 경우에는 ``share`` 에서  
+``Only text and output`` 또는
+``All content excluding sensitive code cells`` 옵션을 선택하십시오. 
 
-The ```@hidden_cell``` magic is used to mark the credentials cells as
-"sensitive". If you do any rearranging of sensitive code, remember to identify
-sensitive cells with ``@hidden_cell``.
+```@hidden_cell``` 기능은 귀하의 신임 정보를 "민감한 정보"로 분류합니다. 
+민감한 코드를 수정하는 경우, 민감한 정보가 담긴 셀은 반드시
+``@hidden_cell``로 구분하십시오.
 
-Installing Python packages
+Python 패키지 설치하기
 --------------------------
-A notebook can use ```!pip install``` to install the Python packages
-from PyPI. You can follow this example if you decide to use additional Python
-packages in your notebook. Check the output to see that the install was
-successful. See the "Controlling output" section below for more information on
-how to suppress/show the output. You might want to use ``DEBUG = True`` until
-you've verified that the pip install was successful.
+PyPI에서 Python 패키지를 설치하려면 노트북에서 ```!pip install```를 사용하십시오. 
+추가적인 Python 패키지를 노트북에서 사용하시려면, 이 예제를 따라합니다. 
+결과를 확인하여 설치가 성공적으로 되었는지 확인하십시오. 
+아래 "결과값 다듬기" 섹션에서, 결과값을 어떻게 숨기거나 보여주는지에 대해 알아봅니다. 
+pip로 설치가 성공적으로 완료될때까지 ``DEBUG = True``를 사용합니다.
 
-> **Note**:  After running a cell with pip install, you may need to restart
-the kernel and then run the cells again from the top.
+> **주의**:  pip로 설치하신 이후, 커널을 재시작하여 
+가장 위에서부터 셀을 실행합니다.
  
-Importing libraries
+라이브러리 가져오기
 -------------------
-Import and some setup of libraries is done near the top. This is another
-example of why cells need to run top-down. Keeping the imports near the top
-is a Python PEP8 style convention. Python does not require this convention,
-but Python developers are used to looking for imports at the top.
+라이브러리를 가져와서 설정하는 부분은 셀의 상단 부분에서 진행됩니다. 
+그래서 셀은 top-down 방식으로 실행이 되어야합니다. 
+가져오기 한 것을 상단에 배치하는 것은 Python PEP8 스타일의 관례입니다. 
+Python이 이러한 관례를 강제하는 것은 아니지만, Python개발자들은 
+이미 습관적으로 가져오기 한 것을 상단에서 찾아봅니다.
 
-Defining global variables and helper functions
+전역 변수(global variables)와 헬퍼 함수(helper functions) 정의하기
 ----------------------------------------------
-After the imports, a few global variables and helper functions are defined.
-These allow for code re-use. These cells need to run before other cells can
-use the functions and globals. These values do not change. You can change
-and run the later cells over and over without always restarting from the top.
+가져오기를 하면 일부 전역 변수와 헬퍼 함수가 정의됩니다. 
+이를 통해 코드 재사용이 가능해집니다. 이들 셀은 다른 셀들이 함수와 전역 변수를 사용하기 전에 실행되어야 합니다. 
+이 값들은 변하지 않습니다. 
+이후에 위치한 셀들은 가장 위에서부터 셀을 다시 시작하지 않고도, 계속해서 변경하여 실행할 수 있습니다.
 
-Controlling output
+결과값 다듬기 
 ------------------
-One of the great things about notebooks is that you can use them to document
-what you are doing, show your work, show the results, and document your
-conclusion -- all in one place. Sharing "your work" (the code) is a great
-feature, but to make the "only text and output" web page look nice and clean
-you can use the following tips.
+노트북의 가장 큰 장점 중 하나는 귀하가 현재 하는 일을 문서화하고, 작업물과 결과를 보여주고, 
+결과를 문서화하는 작업을 한 곳에서 할 수 있다는 점입니다. 
+"나의 작업물"(코드)을 공유하는 건 멋진 일입니다. "only text and output" 기능을 활용해
+웹페이지를 깨끗하고 멋지게 만드십시오. 아래 팁을 활용하십시오. 
 
-#### @hidden_cell magic
+#### @hidden_cell 기능
 
-The @hidden_cell magic is used to mark the credentials cells as "sensitive".
-If you do any rearranging of sensitive code, remember to identify sensitive
+마법같은 @hidden_cell 기능으로 신임 정보 셀을 "민감 정보"로 표시하십시오.
+ If you do any rearranging of sensitive code, remember to identify sensitive
 cells with @hidden_cell.
 
 #### Ending with a semi-colon 
